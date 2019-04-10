@@ -8,23 +8,16 @@ Realitzar la mateixa pràctica 1 de la UF3 amb Laravel.
 
 #### Lliurar la part de categories desenvolupada a classe (List, Add, Search, Modify, Delete).
 
-    Id: és obligatori, únic, autoincremental, numèric positiu sense decimals.
-
-    Name: és obligatori, únic, text curt (mínim i màxim controlat), alfabètic (solament lletres i espais).
-
-    Description: és opcional, text llarg (màxim controlat), alfanumèric (qualsevol caràcter).
-    Timestamps: amb les dates de creació i modificació.
+- **Id**: és obligatori, únic, autoincremental, numèric positiu sense decimals.
+- **Name**: és obligatori, únic, text curt (mínim i màxim controlat), alfabètic (solament lletres i espais).
+- **Description**: és opcional, text llarg (màxim controlat), alfanumèric (qualsevol caràcter).
+- **Timestamps**: amb les dates de creació i modificació.
 
 #### Lliurar la part de productes (List, Add, Search, Modify, Delete).
 
-    Id: és obligatori, únic, autoincremental, numèric positiu sense decimals.
-
-    Name: és obligatori, únic, text curt (mínim i màxim controlat), alfabètic (solament lletres i espais).
-
-    Price: és obligatori, numèric positiu amb decimals.
-
-    Description: és opcional, text llarg (màxim controlat), alfanumèric (qualsevol caràcter).
-
-    Category: és opcional; llista desplegable amb el nom de les categories existents (però es desa l'Id intern).
-    Timestamps: amb les dates de creació i modificació.
-
+- **Id**: és obligatori, únic, autoincremental, numèric positiu sense decimals.
+- **Name**: és obligatori, únic, text curt (mínim i màxim controlat), alfabètic (solament lletres i espais).
+- **Price**: és obligatori, numèric positiu amb decimals.
+- **Description**: és opcional, text llarg (màxim controlat), alfanumèric (qualsevol caràcter).
+- **Category**: és opcional; llista desplegable amb el nom de les categories existents (però es desa l'Id intern).
+- **Timestamps**: amb les dates de creació i modificació.
