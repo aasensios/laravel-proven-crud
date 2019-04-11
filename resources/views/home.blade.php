@@ -22,7 +22,7 @@
             <div class="card-header text-center">
                 Home
             </div>
-            <div class="card-body">
+            <div class="card-body mx-auto">
                 {{ ucfirst(trans('welcome')) }}!
             </div>
         </div>

@@ -15,10 +15,14 @@ class Product extends Model
         'name',
         'price',
         'description',
-        // 'category',
+        'category_id',
     ];
 
     // protected $hidden = [
     //     'category',
     // ];
+
+    public function Category() {
+        return $this->belongsTo(Category::class);
+    }
 }

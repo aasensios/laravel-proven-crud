@@ -1,6 +1,6 @@
 <?php
 
-use App\Category;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
@@ -23,6 +23,9 @@ class CategoriesTableSeeder extends Seeder
         //     'created_at' => now(),
         //     'updated_at' => now(),
         // ]);
+
+        // Previous delete
+        DB::table('categories')->delete();
 
         // Factory replaces the previuos manual random generation
         factory(Category::class, 5)->create();

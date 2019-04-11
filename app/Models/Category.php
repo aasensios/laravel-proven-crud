@@ -21,6 +21,11 @@ class Category extends Model
 //    
 //    // Forzar que la primary key sea otro campo
 //    protected $primary_key = 'name';
-    
+
+    public function listProducts() {
+        return $this->hasMany(Product::class);
+    }
+
+    // For more relations, see laravel eloquent version 5.6, Many to Many (belongsToMany), One to One, One to Many, etc.
     
 }

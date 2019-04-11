@@ -86,14 +86,12 @@
                 Laravel
             </div>
             {{-- Dummy struff to test variable interpolation --}}
-            <a class="btn btn-info" href="{{ route('home') }}">{{ $name . ' ' . $year }}</a>
+            <a class="btn btn-info font-weight-bold" href="{{ route('home') }}">{{ $name . ' ' . $year }}</a>
             <br><br>
-            <span>Developed by Alejandro Asensio &copy; 2019</span>
-            <br><br>
-            <div class="card">
+            <div class="table">
                 <h3>Tips:</h3>
-                <span>{{ "url('root')=" . url('root') . ' --> DO NOT use it for routing' }}</span>
-                <span>{{ "route('root')=" . route('root') . ' --> YES, use it for routing'}}</span>
+                <p scope="row">{{ "Don't use url('route-name') for routing --- " . url('root') }}</p>
+                <p scope="row">{{ "Use route('root-name') for routing --- " . route('root') }}</p>
             </div>
             <br>
             {{-- End of that dummy stuff --}}
@@ -106,6 +104,8 @@
                 <a href="https://forge.laravel.com">Forge</a>
                 <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>
+            <br><br>
+            <span>Developed by Alejandro Asensio <br>&copy; Institut Provençana 2019</span>
         </div>
     </div>
 </body>

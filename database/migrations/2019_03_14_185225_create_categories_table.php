@@ -14,7 +14,7 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->bigIncrements('id'); // Primary key por defecto
+            $table->increments('id'); // Primary key por defecto
 //            $table->ineger('id')->autoIncrement(); // Otra manera de hacerlo autoincremental
             $table->string('name')->unique();
             $table->string('description', 100)->nullable();

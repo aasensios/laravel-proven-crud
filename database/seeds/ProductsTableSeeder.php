@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Product;
+use App\Models\Product;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -12,6 +12,9 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
+        // Previous delete
+        DB::table('products')->delete();
+
         // Factory definition
         factory(Product::class, 10)->create();
     }

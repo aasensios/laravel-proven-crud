@@ -13,7 +13,7 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Description</th>
-                    {{-- <th>Category Name</th> --}}
+                    <th>Category</th>
                 </tr>
                 @foreach ($products as $product) 
                     <tr>
@@ -21,7 +21,9 @@
                         <td><a href="{{ url('/product/edit/' . $product->id) }}">{{ $product->name }}</a></td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
-                        {{-- <td><a href="{{ url('/product/edit/' . $product->id) }}">{{ $product->category->name }}</a></td> --}}
+                        @isset ($product->category)
+                        <td><a href="{{ url('/category/edit/' . $product->category->id) }}">{{ $product->category->name }}</a></td>
+                        @endisset
                     </tr>
                 @endforeach
             </table>
