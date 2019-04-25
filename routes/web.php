@@ -50,7 +50,7 @@ Route::get('/product/list', 'ProductController@listAll')->name('product-list');
 Route::view('/category/create', 'category.create')->name('category-create');
 Route::post('/category/create', 'CategoryController@create');
 
-Route::view('/product/create', 'product.create')->name('product-create');
+Route::view('/product/create', 'product.create', ['categories' => \App\Models\Category::all()])->name('product-create');
 Route::post('/product/create', 'ProductController@create');
 
 // Find

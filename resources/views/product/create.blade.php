@@ -12,19 +12,20 @@
             {{ method_field('POST') }}
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="name">Name *:</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" />
+                <label for="name">Name *</label>
+                <input class="form-control mb-3" type="text" id="name" name="name" value="{{ old('name') }}" />
 
-                <label for="price">Price *:</label>
-                <input class="form-control" type="text" id="price" name="price" value="{{ old('price') }}" />
+                <label for="price">Price *</label>
+                <input class="form-control mb-3" type="text" id="price" name="price" value="{{ old('price') }}" />
 
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
+                <label for="description">Description</label>
+                <textarea class="form-control mb-3" id="description" name="description">{{ old('description') }}</textarea>
 
-                {{-- TODO select --}}
-                {{-- <label for="category">Category *:</label>
-                <select name="category" id="category"> --}}
-                    
+                <label for="category">Category</label>
+                <select class="form-control mb-3" name="category_id" id="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
                 </select>
             </div>
 

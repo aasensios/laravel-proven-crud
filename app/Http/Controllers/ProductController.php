@@ -99,8 +99,8 @@ class ProductController extends Controller
 
         }
 
-        // Go to the view 'create', message is passed as parameter.
-        return view('product.create', ['message' => $message]);
+        // Go to the view 'create', message is passed as parameter as well as all the categories.
+        return view('product.create', ['message' => $message, 'categories' => \App\Models\Category::all()]);
     }
 
     public function find(Request $request)
@@ -134,7 +134,7 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
             // Get the session message (come from update method)
             $message = Session::get('session_message');
-            return view('product.edit', ['product' => $product, 'message' => $message]);
+            return view('product.edit', ['product' => $product, 'message' => $message, 'categories' => \App\Models\Category::all()]);
         } catch (\Exception $e) {
             $message = 'No data found. ' . $e->getMessage();
         }
@@ -165,7 +165,7 @@ class ProductController extends Controller
         } catch (\Exception $e) {
             $message = 'No data updated. ' . $e->getMessage();
         }
-        return view('product.edit', ['product' => $product, 'message' => $message]);
+        return view('product.edit', ['product' => $product, 'message' => $message, 'categories' => \App\Models\Category::all()]);
     }
 
     public function delete($request)

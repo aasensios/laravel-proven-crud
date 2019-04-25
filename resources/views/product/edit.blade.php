@@ -12,12 +12,21 @@
             {{ method_field('POST') }}
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="name">Name *:</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') ?? $product->name }}" />
-                <label for="name">Price *:</label>
-                <input class="form-control" type="text" id="price" name="price" value="{{ old('price') ?? $product->price }}" />
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description">{{ old('description') ?? $product->description }}</textarea>
+                <label for="name">Name *</label>
+                <input class="form-control mb-3" type="text" id="name" name="name" value="{{ old('name') ?? $product->name }}" />
+                
+                <label for="price">Price *</label>
+                <input class="form-control mb-3" type="text" id="price" name="price" value="{{ old('price') ?? $product->price }}" />
+                
+                <label for="description">Description</label>
+                <textarea class="form-control mb-3" id="description" name="description">{{ old('description') ?? $product->description }}</textarea>
+
+                <label for="category_id">Category</label>
+                <select class="form-control mb-3" name="category_id" id="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">                
@@ -25,6 +34,7 @@
                 <button class="btn btn-danger" type="submit" name="action" value="delete">Delete</button>
                 <button class="btn btn-warning" type="reset">Reset Form</button>
                 <a class="btn btn-dark" href="{{ url('/product/edit/' . (old('id') ?? $product->id)) }}">Reload Page</a>
+                <a class="btn btn-info" href="{{ url('/product/list') }}">Go Back to List</a>
             </div>
 
             <label class="alert alert-light">* Required fields</label>

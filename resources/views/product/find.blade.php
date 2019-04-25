@@ -13,12 +13,12 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <p>Fill as many fields as you want (id has priority):</p>
-                <label for="id">Id:</label>
-                <input class="form-control" type="text" id="id" name="id" value="{{ $id ?? old('id') }}" />
-                <label for="name">Name:</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ $name ?? old('name') }}" />
-                <label for="name">Price:</label>
-                <input class="form-control" type="text" id="price" name="price" value="{{ $price ?? old('price') }}" />
+                <label for="id">Id</label>
+                <input class="form-control mb-3" type="text" id="id" name="id" value="{{ $id ?? old('id') }}" />
+                <label for="name">Name</label>
+                <input class="form-control mb-3" type="text" id="name" name="name" value="{{ $name ?? old('name') }}" />
+                <label for="name">Price</label>
+                <input class="form-control mb-3" type="text" id="price" name="price" value="{{ $price ?? old('price') }}" />
             </div>
 
             <div class="form-group">

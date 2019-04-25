@@ -22,7 +22,7 @@
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
                         @isset ($product->category)
-                        <td><a href="{{ url('/category/edit/' . $product->category->id) }}">{{ $product->category->name }}</a></td>
+                            <td><a href="{{ url('/category/edit/' . $product->category->id) }}">{{ $product->category->name }}</a></td>
                         @endisset
                     </tr>
                 @endforeach

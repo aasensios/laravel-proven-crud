@@ -67,6 +67,19 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .btn-bd-download {
+            font-weight: 500;
+            color: #ffe484;
+            border-color: #ffe484
+        }
+
+        .btn-bd-download:active,
+        .btn-bd-download:hover {
+            color: #2a2730;
+            background-color: #ffe484;
+            border-color: #ffe484
+        }
     </style>
 </head>
 
@@ -86,15 +99,14 @@
                 Laravel
             </div>
             {{-- Dummy struff to test variable interpolation --}}
-            <a class="btn btn-info font-weight-bold" href="{{ route('home') }}">{{ $name . ' ' . $year }}</a>
+            <a class="btn btn-info btn-bd-download font-weight-bold" href="{{ route('home') }}">{{ $name . ' ' . $year }}</a>
             <br><br>
             <div class="table">
                 <h3>Tips:</h3>
                 <p scope="row">{{ "Don't use url('route-name') for routing --- " . url('root') }}</p>
                 <p scope="row">{{ "Use route('root-name') for routing --- " . route('root') }}</p>
             </div>
-            <br>
-            {{-- End of that dummy stuff --}}
+            <br> {{-- End of that dummy stuff --}}
             <div class="links">
                 <a href="https://laravel.com/docs">Docs</a>
                 <a href="https://laracasts.com">Laracasts</a>

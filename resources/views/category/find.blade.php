@@ -13,10 +13,11 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <p>Fill one or both fields below (id has priority):</p>
-                <label for="id">Id:</label>
-                <input class="form-control" type="text" id="id" name="id" value="{{ $id ?? old('id') }}" />
-                <label for="name">Name:</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ $name ?? old('name') }}" />
+                <label for="id">Id</label>
+                <input class="form-control mb-3" type="text" id="id" name="id" value="{{ $id ?? old('id') }}" />
+
+                <label for="name">Name</label>
+                <input class="form-control mb-3" type="text" id="name" name="name" value="{{ $name ?? old('name') }}" />
             </div>
 
             <div class="form-group">

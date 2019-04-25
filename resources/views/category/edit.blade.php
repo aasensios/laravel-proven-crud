@@ -12,10 +12,11 @@
             {{ method_field('POST') }}
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="name">Name *:</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') ?? $category->name }}" />
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description">{{ old('description') ?? $category->description }}</textarea>
+                <label for="name">Name *</label>
+                <input class="form-control mb-3" type="text" id="name" name="name" value="{{ old('name') ?? $category->name }}" />
+
+                <label for="description">Description</label>
+                <textarea class="form-control mb-3" id="description" name="description">{{ old('description') ?? $category->description }}</textarea>
             </div>
 
             <div class="form-group">                
@@ -23,6 +24,7 @@
                 <button class="btn btn-danger" type="submit" name="action" value="delete">Delete</button>
                 <button class="btn btn-warning" type="reset">Reset Form</button>
                 <a class="btn btn-dark" href="{{ url('/category/edit/' . (old('id') ?? $category->id)) }}">Reload Page</a>
+                <a class="btn btn-info" href="{{ url('/category/list') }}">Go Back to List</a>
             </div>
 
             <label class="alert alert-light">* Required fields</label>

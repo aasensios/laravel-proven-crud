@@ -12,10 +12,11 @@
             {{ method_field('POST') }}
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="name">Name *:</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" />
+                <label for="name">Name *</label>
+                <input class="form-control mb-3" type="text" id="name" name="name" value="{{ old('name') }}" />
+
                 <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
+                <textarea class="form-control mb-3" id="description" name="description">{{ old('description') }}</textarea>
             </div>
 
             <div class="form-group">
