@@ -21,12 +21,13 @@
                 <label for="description">Description</label>
                 <textarea class="form-control mb-3" id="description" name="description">{{ old('description') }}</textarea>
 
-                <label for="category">Category</label>
-                <select class="form-control mb-3" name="category_id" id="category_id">
+                <label for="category_id">Category</label>
+                {{-- <select class="form-control mb-3" name="category_id" id="category_id">
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
-                </select>
+                </select> --}}
+                {{ Form::select('category_id', $categories, $product->category_id ?? old('category_id'), ['class' => 'form-control']) }}
             </div>
 
             <div class="form-group">

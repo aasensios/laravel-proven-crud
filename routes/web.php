@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,13 +47,20 @@ Route::view('/home', 'home')->name('home');
 // List
 Route::get('/category/list', 'CategoryController@listAll')->name('category-list');
 Route::get('/product/list', 'ProductController@listAll')->name('product-list');
+Route::get('/catalog/show', 'CatalogController@show')->name('catalog-show');
 
 // Create
 Route::view('/category/create', 'category.create')->name('category-create');
 Route::post('/category/create', 'CategoryController@create');
 
-Route::view('/product/create', 'product.create', ['categories' => \App\Models\Category::all()])->name('product-create');
+// Route::view('/product/create', 'product.create', ['categories' => \App\Models\Category::all()])->name('product-create');
+Route::get('/product/create', function() {
+    $categories = Category::pluck('name', 'id')->prepend('-', '');
+    // $categories = Category::pluck('id', 'name')->prepend('', '-');
+    return view('product.create', ['categories' => $categories]);
+})->name('product-create');
 Route::post('/product/create', 'ProductController@create');
+
 
 // Find
 Route::view('/category/find', 'category.find')->name('category-find');
@@ -62,7 +71,9 @@ Route::post('/product/find', 'ProductController@find');
 // Edit
 Route::get('/category/edit/{id}', 'CategoryController@edit')->name('category-edit');
 Route::get('/product/edit/{id}', 'ProductController@edit')->name('product-edit');
+Route::get('/catalog/edit/{id}', 'CatalogController@edit')->name('movie-edit');
 
 // Modify = Update or Delete
 Route::post('/category/modify', 'CategoryController@modify');
 Route::post('/product/modify', 'ProductController@modify');
+Route::post('/catalog/update', 'CatalogController@update');

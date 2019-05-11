@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -98,6 +99,8 @@ class ProductController extends Controller
             $message = 'No product has been created. ' . $e->getMessage();
 
         }
+        // If there was an error, get the categories again (apart from the route 'product-create')
+        $categories = Category::pluck('name', 'id')->prepend('-', '');
 
         // Go to the view 'create', message is passed as parameter as well as all the categories.
         return view('product.create', ['message' => $message, 'categories' => \App\Models\Category::all()]);
@@ -134,7 +137,8 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
             // Get the session message (come from update method)
             $message = Session::get('session_message');
-            return view('product.edit', ['product' => $product, 'message' => $message, 'categories' => \App\Models\Category::all()]);
+            $categories = Category::pluck('name', 'id')->prepend('-', '');
+            return view('product.edit', ['product' => $product, 'message' => $message, 'categories' => $categories]);
         } catch (\Exception $e) {
             $message = 'No data found. ' . $e->getMessage();
         }
